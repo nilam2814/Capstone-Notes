@@ -1,0 +1,51 @@
+Agile is one of the most popular approaches to project management because it is flexible, it is adaptable to changes and it encourages customer feedback.
+Many teams embrace the Agile approach for the following reasons:
+Rapid progress: By effectively reducing the time it takes to complete various stages of a project, teams can elicit feedback in real time and produce working prototypes or demos 
+throughout the process.
+Customer and stakeholder alignment: Through focusing on customer concerns and stakeholder feedback, the Agile team is well positioned to produce results that satisfy the right people
+Continuous improvement: As an iterative approach, Agile project management allows teams to chip away at tasks until they reach the best end result
+
+
+Agile project management is not a singular framework but an umbrella term that includes a wide range of methodologies, including Scrum, Kanban, Extreme Programming (XP), 
+and the Adaptive Project Framework (APF).
+Scrum: It is ideal for projects with rapidly changing requirements, using short sprints.
+Kanban: It visualizes project 
+]progress and is great for tasks requiring steady output.
+Lean: It streamlines processes, eliminating waste for customer 
+value.
+Extreme Programming (XP): It enhances software quality and responsiveness to customer satisfaction.
+Adaptive Project Framework (APF): Works well for projects with unclear details, as it adapts to constantly evolving client needs.
+
+The Agile software development life cycle helps you break down each project you take on into six simple stages:
+Concept: Define the project scope and priorities
+Inception: Build the Agile team according to project requirements 
+Iteration: Create code factoring in customer feedback 
+Release: Test the code and troubleshoot any issues
+Maintenance: Provide ongoing tech support to ensure the product remains serviceable
+Retirement: The end of the product lifespan, which often coincides with the beginning of a new one
+
+
+The four values of Agile are the pillars of Agile methodology. From those values, the team developed 12 principles. 
+If the four values of Agile are the weight-bearing pillars of a house, then these 12 principles are the rooms you can build within that house. These principles can be easily adapted
+ to fit the needs of your team. 
+
+The 12 principles used in Agile methodology are:
+1.Satisfy customers through early, continuous improvement and delivery.When customers receive new updates regularly, they're more likely to see the changes they want within the product. 
+This leads to happier, more satisfied customers—and more recurring revenue.
+2.Welcome changing requirements, even late in the project. The Agile framework is all about adaptability. In iterative processes like Agile, being inflexible causes more harm than good. 
+3.Deliver value frequently. Similar to principle #1, delivering value to your customers or stakeholders frequently makes it less likely for them to churn. 
+4.Break the silos of your projects. Collaboration is key in the Agile framework. The goal is for people to break out of their own individual projects and collaborate together more 
+frequently. 
+5.Build projects around motivated individuals. Agile works best when teams are committed and actively working to achieve a goal. 
+6.The most effective way to communicate is face-to-face. If you’re working on a distributed team, spend time communicating in ways that involve face-to-face communication like Zoom calls. 
+7.Working software is the primary measure of progress. The most important thing that teams should strive for with the Agile framework is the product. The goal here is to 
+prioritize functional software over everything else.
+8.Maintain a sustainable working pace. Some aspects of Agile can be fast-paced, but it shouldn't be so fast that team members burn out. The goal is to maintain sustainability 
+throughout the project.
+9.Continuous excellence enhances agility. If the team develops excellent code in one sprint, they can continue to build off of it the next. Continually creating great work 
+allows teams to move faster in the future. 
+10.Simplicity is essential. Sometimes the simplest solution is the best solution. Agile aims to not overcomplicate things and find simple answers to complex problems. 
+11.Self-organizing teams generate the most value. Similar to principle #5, proactive teams become valuable assets to the company as they strive to deliver value.
+12.Regularly reflect and adjust your way of work to boost effectiveness. Retrospective meetings are a common Agile practice. It's a dedicated time for teams to look back and 
+
+reflect on their performance and adapt their behaviors for the future.
