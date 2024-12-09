@@ -1,0 +1,386 @@
+package com.training.org;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.util.Scanner;
+
+public class CreateFile {
+	public static void main(String[] args) {
+		try {
+			FileWriter myWriter = new FileWriter("../FileHandlingExamples/Data/myfile.txt");
+			myWriter.write("Data to write into file");
+
+			myWriter.close();
+			System.out.println("Successfully wrote to the file.");
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			File myObj = new File("../FileHandlingExamples/Data/myfile.txt");
+			Scanner myReader = new Scanner(myObj);
+			while (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				System.out.println(data);
+			}
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+
+		}
+
+ 
+		//			File Obj = new File("../FileHandlingExamples/Data/myfile.txt");
+		//            if (Obj.createNewFile()) {
+		//                System.out.println("File created: "
+		//                                   + Obj.getName());
+		//            }
+		//            else {
+		//                System.out.println("File already exists.");
+		//            }
+		//			if (Obj.exists()) {
+		//				System.out.println("File name: " + Obj.getName());
+		//				System.out.println("Absolute path: " + Obj.getAbsolutePath());
+		//				System.out.println("Writeable: " + Obj.canWrite());
+		//				System.out.println("Readable " + Obj.canRead());
+		//				System.out.println("File size in bytes " + Obj.length());
+		//			} else {
+		//				System.out.println("The file does not exist.");
+		//			}
+	}
+}
+
+
+**************************************************************************************************************************
+
+
+  FileInputStream fis = new FileInputStream("../FileHandlingExamples/Data/myfile.txt");
+
+	     int k;
+	     while((k=fis.read()) != -1)
+	     {
+	        System.out.print((char)k);
+	     }
+	     fis.close();
+****************************************************************************************************************************
+
+package com.training.org;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class CreateFile {
+	public static void main(String[] args) throws IOException {
+		
+		FileInputStream fis = new FileInputStream("C:\\Users\\nilamp\\Documents\\Learning Java\\File Handling\\myfile.txt");
+
+	     int k;
+	     while((k=fis.read()) != -1)
+	     {
+	        System.out.print((char)k);
+	     }
+	     fis.close();
+		
+		
+//		try {
+//			FileWriter myWriter = new FileWriter("C:\\Users\\nilamp\\Documents\\Learning Java\\File Handling\\myfile.txt");
+//			myWriter.write("Data to write into file");
+//
+//			myWriter.close();
+//			System.out.println("Successfully wrote to the file.");
+//		}
+//		catch(Exception e) {
+//			System.out.println(e.getMessage());
+//		}
+//
+//		try {
+//			File myObj = new File("C:\\Users\\nilamp\\Documents\\Learning Java\\File Handling\\myfile.txt");
+//			Scanner myReader = new Scanner(myObj);
+//			while (myReader.hasNextLine()) {
+//				String data = myReader.nextLine();
+//				System.out.println(data);
+//			}
+//			myReader.close();
+//		} catch (FileNotFoundException e) {
+//			System.out.println("An error occurred.");
+//
+//		}
+//		try {
+//				
+//			File obj = new File("C:\\Users\\nilamp\\Documents\\Learning Java\\File Handling\\myfile.txt");
+//		if(obj.createNewFile()) {
+//			System.out.println("File created: "+obj.getName());
+//		}
+//		else {
+//			System.out.println("File already exist. ");
+//		}
+//			if (obj.exists()) {
+//				System.out.println("File name: " + obj.getName());
+//				System.out.println("Absolute Path: " + obj.getAbsolutePath());
+//				System.out.println("Writable " + obj.canWrite());
+//				System.out.println("Readable " + obj.canRead());
+//				System.out.println("File size in bytes " + obj.length());
+//
+//			} else {
+//				System.out.println("File does not exist.");
+//			}
+//		} catch (Exception e) {
+//			System.out.println("An error has occured.");
+//			e.printStackTrace();
+//		}
+	}
+
+}
+*********************************************************************************************************************************
+Assignment
+1] Read the content from one file and search for a particular word and its number of times it is present into the file
+
+2] Replace that word with another word and store that into another file
+**************************************************************************
+
+import java.io.*; 
+class ReadKeys { 
+ public static void main (String args[]) { 
+	 StringBuffer sb = new StringBuffer(); 
+	 char c;
+ 	try {
+	while((ch =(char)System.in.read()) != '\n')) 
+		{ 
+			sb.append(c); } 
+		} 
+	    catch (Exception e) { ...  }
+  String s = new String(sb);
+  System.out.println(s); 
+	}
+ } 
+***********************************************************************************
+
+<dependency>
+  <groupId>org.apache.poi</groupId>
+  <artifactId>poi</artifactId>
+  <version>5.2.2</version>
+</dependency>
+
+<dependency>
+  <groupId>org.apache.poi</groupId>
+  <artifactId>poi-ooxml</artifactId>
+  <version>5.2.2</version>
+</dependency>
+****************************************************************************
+
+
+package com.training.org;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class WriteExcel {
+	public static void main(String[] args) {
+		XSSFWorkbook workbook = new XSSFWorkbook(); 
+
+		//Create a blank sheet
+		XSSFSheet sheet = workbook.createSheet("Employee Data");
+
+		//Prepare data to be written as an Object[]
+
+		Map<String, Object[]> data = new TreeMap<String, Object[]>();
+		data.put("1", new Object[] {"ID", "NAME", "LASTNAME"});
+		data.put("2", new Object[] {1, "Amit", "Shukla"});
+		data.put("3", new Object[] {2, "Lokesh", "Gupta"});
+		data.put("4", new Object[] {3, "John", "Adwards"});
+		data.put("5", new Object[] {4, "Brian", "Schultz"});
+
+		//Iterate over data and write to sheet
+
+		Set<String> keyset = data.keySet();
+		int rownum = 0;
+		for (String key : keyset) {
+			Row row = sheet.createRow(rownum++);
+			Object [] objArr = data.get(key);
+			int cellnum = 0;
+			for (Object obj : objArr)
+			{
+				Cell cell = row.createCell(cellnum++);
+				if(obj instanceof String)
+					cell.setCellValue((String)obj);
+				else if(obj instanceof Integer)
+					cell.setCellValue((Integer)obj);
+			}
+		}
+
+		//Write the workbook in file system
+
+		try {
+			FileOutputStream out = new FileOutputStream(new File("employee.xlsx"));
+			workbook.write(out);
+			out.close();
+			System.out.println("employee.xlsx written successfully on disk.");
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+
+
+	}
+}
+*****************************************************************************************************************************
+
+
+
+package com.training.org;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class WriteExcel {
+	public static void main(String[] args) {
+		XSSFWorkbook workbook = new XSSFWorkbook(); 
+
+		//Create a blank sheet
+		XSSFSheet sheet = workbook.createSheet("Employee Data");
+
+		//Prepare data to be written as an Object[]
+
+//		Map<String, Object[]> data = new TreeMap<String, Object[]>();
+//		data.put("1", new Object[] {"ID", "NAME", "LASTNAME"});
+//		data.put("2", new Object[] {1, "Amit", "Shukla"});
+//		data.put("3", new Object[] {2, "Lokesh", "Gupta"});
+//		data.put("4", new Object[] {3, "John", "Adwards"});
+//		data.put("5", new Object[] {4, "Brian", "Schultz"});
+
+		//Iterate over data and write to sheet
+
+//		Set<String> keyset = data.keySet();
+//		int rownum = 0;
+//		for (String key : keyset) {
+//			Row row = sheet.createRow(rownum++);
+//			Object [] objArr = data.get(key);
+//			int cellnum = 0;
+//			for (Object obj : objArr)
+//			{
+//				Cell cell = row.createCell(cellnum++);
+//				if(obj instanceof String)
+//					cell.setCellValue((String)obj);
+//				else if(obj instanceof Integer)
+//					cell.setCellValue((Integer)obj);
+//			}
+//		}
+		
+		
+		Row row=sheet.createRow(0);
+		Cell cell = row.createCell(0);
+		cell.setCellValue(100);
+		
+		
+		Cell cell2 = row.createCell(1);
+		cell2.setCellValue("Eshan");
+		
+
+		//Write the workbook in file system
+
+		try {
+			FileOutputStream out = new FileOutputStream(new File("employee1.xlsx"));
+			workbook.write(out);
+			out.close();
+			System.out.println("employee.xlsx written successfully on disk.");
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+
+
+	}
+}
+
+*****************************************************************************************************************
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.training.org</groupId>
+	<artifactId>MyFirstMavenProject</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.2</version>
+		</dependency>
+
+
+	</dependencies>
+
+</project>
+
+**************************************************************************************
+
+FileInputStream file = new FileInputStream(new File("employee.xlsx"));
+
+		//Create Workbook instance holding reference to .xlsx file
+		XSSFWorkbook workbook = new XSSFWorkbook(file);
+
+		//Get first/desired sheet from the workbook
+		XSSFSheet sheet = workbook.getSheetAt(0);
+
+		//Iterate through each rows one by one
+		Iterator<Row> rowIterator = sheet.iterator();
+		while (rowIterator.hasNext()) {
+
+		  Row row = rowIterator.next();
+
+		  //For each row, iterate through all the columns
+		  Iterator<Cell> cellIterator = row.cellIterator();
+		   
+		  while (cellIterator.hasNext()) {
+
+		    Cell cell = cellIterator.next();
+		    
+		    switch(cell.getCellType()) {
+		    	case STRING:
+		    		System.out.print(cell.getStringCellValue() + "\t");
+		    		break;
+		    	case NUMERIC:
+		    		System.out.print((cell.getNumericCellValue()) + "\t");
+			        break;
+		    }
+
+		  }
+		  System.out.println("");
+		}
+		file.close();
+***********************************************************************************************
+
+
